@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const Base64 = require('js-base64').Base64;
 const fetch = require('node-fetch');
+const { AssetCache } = require('@11ty/eleventy-cache-assets');
 
 // Beyonce's artist Id on Spotify
 const BEYONCE_ARTIS_ID = '6vWDO969PvNqNYHIOW5v0m';
@@ -75,4 +76,15 @@ function mapData(tracks = []) {
   return trackIDs;
 }
 
-module.exports = getBeyonce();
+module.exports = async function saveToCache() {
+  let asset = new AssetCache('beyonce_tracks_response');
+
+  if (asset.isCacheValid('1d')) {
+    return asset.getCachedValue();
+  }
+
+  let tracks = await getBeyonce();
+  tracks = JSON.stringify(tracks);
+  await asset.save(tracks, 'json');
+  return tracks;
+};

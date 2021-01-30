@@ -1,13 +1,5 @@
 ---
 permalink: tracks.json
 ---
-[
-    {%- for trackID in beyonce -%}
-        "{{ trackID }}"
-        {%- if loop.last == true -%}
 
-        {%- else -%}
-            ,
-        {%- endif -%}
-    {%- endfor -%}
-]
+{{beyonce | safe }}

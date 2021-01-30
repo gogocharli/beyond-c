@@ -1,6 +1,7 @@
 .snowpack
+.cache
+.env
 build
 node_modules
 public
-.env
 _output

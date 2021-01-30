@@ -4,6 +4,7 @@ dependencies:
   gsap: 3.6.0
 devDependencies:
   '@11ty/eleventy': 0.11.1
+  '@11ty/eleventy-cache-assets': 2.1.0
   '@snowpack/plugin-run-script': 2.3.0
   autoprefixer: 10.2.4
   cssnano: 4.1.10
@@ -20,6 +21,18 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2FWYlkphQ/83MG7b9qqBJfJJ0K9zupNz/6n4EdDuNLw6hQHGp4Sp4UMDRyBvA/xCTYDBaPSuSjHuu45tSujegg==
+  /@11ty/eleventy-cache-assets/2.1.0:
+    dependencies:
+      debug: 4.3.1
+      flat-cache: 3.0.4
+      node-fetch: 2.6.1
+      p-queue: 6.6.2
+      short-hash: 1.0.0
+    dev: true
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-QZPSvK3yOZlPUQvTxzRYH6hv2S/jz8Pac2NLKQ/BPg16Siba6ujXP0ApToPGZftyDyFa0dZVZxhWcX4ino4KSg==
   /@11ty/eleventy/0.11.1:
     dependencies:
       '@11ty/dependency-tree': 1.0.0
@@ -1415,6 +1428,19 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-PpOwAdQ/YlXQ2vj8a3h8IipDuYRi3wceVQQGYWxNINccq40Anw7BlsEXCMbt1Zt+OLA6Fq9suIpIWD0OsnISlw==
+  /flat-cache/3.0.4:
+    dependencies:
+      flatted: 3.1.1
+      rimraf: 3.0.2
+    dev: true
+    engines:
+      node: ^10.12.0 || >=12.0.0
+    resolution:
+      integrity: sha512-dm9s5Pw7Jc0GvMYbshN6zchCA9RgQlzzEZX3vylR9IqFfS8XciblUXOKfW6SiuJ0e13eDYZoZV5wdrev7P3Nwg==
+  /flatted/3.1.1:
+    dev: true
+    resolution:
+      integrity: sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==
   /flatten/1.0.3:
     dev: true
     resolution:
@@ -1631,6 +1657,10 @@ packages:
       node: '>= 0.4.0'
     resolution:
       integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
+  /hash-string/1.0.0:
+    dev: true
+    resolution:
+      integrity: sha1-w/oV8Hjd0WvBULQXb95wkWIPLH8=
   /hex-color-regex/1.1.0:
     dev: true
     resolution:
@@ -2470,6 +2500,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-bYJHo/LOmoTd+pfiYhfZDnf9zekVJrY+cnS2a5F2x+w5ppvTqObojTP7WiFG+kVZs9Inw+qQ/lw7TroWwhdd2g==
+  /p-finally/1.0.0:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-P7z7FbiZpEEjs0ttzBi3JDNqLK4=
   /p-limit/2.3.0:
     dependencies:
       p-try: 2.2.0
@@ -2486,6 +2522,23 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-R79ZZ/0wAxKGu3oYMlz8jy/kbhsNrS7SKZ7PxEHBgJ5+F2mtFW2fK2cOtBh1cHYkQsbzFV7I+EoRKe6Yt0oK7A==
+  /p-queue/6.6.2:
+    dependencies:
+      eventemitter3: 4.0.7
+      p-timeout: 3.2.0
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-RwFpb72c/BhQLEXIZ5K2e+AhgNVmIejGlTgiB9MzZ0e93GRvqZ7uSi0dvRF7/XIXDeNkra2fNHBxTyPDGySpjQ==
+  /p-timeout/3.2.0:
+    dependencies:
+      p-finally: 1.0.0
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-rhIwUycgwwKcP9yTOOFK/AKsAopjjCakVqLHePO3CC6Mir1Z99xT+R63jZxAT5lFZLa2inS5h+ZS2GvR99/FBg==
   /p-try/2.2.0:
     dev: true
     engines:
@@ -3578,6 +3631,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==
+  /rimraf/3.0.2:
+    dependencies:
+      glob: 7.1.6
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
   /rollup/2.38.1:
     dev: true
     engines:
@@ -3711,6 +3771,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
+  /short-hash/1.0.0:
+    dependencies:
+      hash-string: 1.0.0
+    dev: true
+    resolution:
+      integrity: sha1-P0kdco/Md37GBbuvf4PyNxL0IFA=
   /sigmund/1.0.1:
     dev: true
     resolution:
@@ -4290,6 +4356,7 @@ packages:
       integrity: sha1-AI4G2AlDIMNy28L47XagymyKxBk=
 specifiers:
   '@11ty/eleventy': ^0.11.0
+  '@11ty/eleventy-cache-assets': ^2.1.0
   '@barba/core': ^2.9.7
   '@snowpack/plugin-postcss': ^1.1.0
   '@snowpack/plugin-run-script': ^2.3.0
