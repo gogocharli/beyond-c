@@ -22,7 +22,7 @@ async function getBeyonce() {
     beyonceTracks.length,
     'Beyoncé tracks',
   );
-  return beyonceTracks;
+  return JSON.stringify(beyonceTracks);
 }
 
 // Get the access token using the client credentials auth flow
@@ -76,15 +76,4 @@ function mapData(tracks = []) {
   return trackIDs;
 }
 
-module.exports = async function saveToCache() {
-  let asset = new AssetCache('beyonce_tracks_response');
-
-  if (asset.isCacheValid('1d')) {
-    return asset.getCachedValue();
-  }
-
-  let tracks = await getBeyonce();
-  tracks = JSON.stringify(tracks);
-  await asset.save(tracks, 'json');
-  return tracks;
-};
+module.exports = getBeyonce();
