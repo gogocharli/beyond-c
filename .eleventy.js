@@ -13,13 +13,21 @@ module.exports = function (eleventyConfig) {
     'woff',
     'woff2',
   ]);
-  eleventyConfig.addPassthroughCopy('static');
+  eleventyConfig.addPassthroughCopy('src/static');
+  eleventyConfig.addPassthroughCopy('scripts');
 
   return {
+    markdownTemplateEngine: 'njk',
+    htmlTemplateEngine: 'njk',
+    dataTemplateEngine: 'njk',
+    passthroughFileCopy: true,
+
     dir: {
-      input: '_template',
-      includes: '../_includes',
+      input: 'src',
       output: '_output',
+      includes: 'includes',
+      layouts: 'layouts',
+      data: 'data',
     },
   };
 };

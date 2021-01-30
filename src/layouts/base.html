@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/static/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Web site created using create-snowpack-app"
+    />
+    <link rel="stylesheet" type="text/css" href="/static/index.css" />
+    <meta name="description" content="{{ site.description }}" />
+    <title>{{ siteTitle }}</title>
+    <script src="/scripts/index.js" type="module" defer></script>
+  </head>
+  <body data-barba="wrapper">
+    <main
+      id="{{ id }}"
+      data-barba="container"
+      data-barba-namespace="{{ namespace }}"
+    >
+      {% block content %} {% endblock %}
+    </main>
+  </body>
+</html>

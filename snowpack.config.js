@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     ['@snowpack/plugin-run-script', { cmd: 'eleventy', watch: '$1 --watch' }],
+    '@snowpack/plugin-postcss',
   ],
   routes: [
     /* Enable an SPA Fallback in development: */
@@ -13,7 +14,7 @@ module.exports = {
   ],
   optimize: {
     /* Example: Bundle your final build: */
-    // "bundle": true,
+    bundle: true,
   },
   packageOptions: {
     /* ... */
