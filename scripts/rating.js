@@ -2,7 +2,6 @@
 let trackCount = 0;
 
 // A regular expression to get the token from the callback url
-const tokenRegex = new RegExp(/access_token=([^&]*)/, 'gi');
 let token;
 
 // Get the IDs to check against the user's saved tracks
